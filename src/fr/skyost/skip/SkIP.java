@@ -14,7 +14,7 @@ import org.json.simple.parser.JSONParser;
 public class SkIP {
 	
 	private static final String OPEN_WEATHER_MAP_URL = "http://api.openweathermap.org/data/2.5/weather?q=%s,%s";
-	private static final String IP_INFO_DB_API_KEY = "e0556fbc006238f36bb9dfb70999725c71ae01d602a398320b23b83e37b9ff30"; // If you do not setup, IP_INFO_DB will not work !
+	private static final String IP_INFO_DB_API_KEY = "NONE"; // If you do not setup, IP_INFO_DB will not work !
 	
 	public static final String SKIP_VERSION = "0.1";
 	
