@@ -19,7 +19,7 @@ public class SkIPExample extends JavaPlugin implements Listener {
 	@EventHandler
 	private final void onPlayerJoin(final PlayerJoinEvent event) {
 		final Player player = event.getPlayer();
-		event.setJoinMessage(player.getName() + " is coming from " + SkIP.getIPData("213.111.35.163").getCountryName() + " !");
+		event.setJoinMessage(player.getName() + " is coming from " + SkIP.getIPData(SkIP.getPlayerIP(player)).getCountryName() + " !");
 	}
 
 }
