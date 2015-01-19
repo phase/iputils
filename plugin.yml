@@ -1,0 +1,5 @@
+name: IPUtils
+version: 1.0
+main: eagle.nest.iputils.IPUtils
+author: Phase(Phasesaber)
+description: IPUtils

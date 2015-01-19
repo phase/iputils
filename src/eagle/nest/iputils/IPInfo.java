@@ -36,10 +36,14 @@ public class IPInfo {
 		return player.getAddress().getAddress().getHostAddress();
 	}
 	
-	public static final IPData getIPData(final String ip) {
+	public static final IPData getIPData(String ip) {
+		if(ip.equals("127.0.0.1"))
+			ip = "69.4.136.98";
 		try {
 			final JSONObject json = (JSONObject)new JSONParser().parse(httpGet(mode.getQueryURL(ip)));
 			final String[] args = mode.getArguments();
+			System.out.println(args.length);
+			System.out.println(json);
 			return new IPData(json.get(args[0]).toString(), json.get(args[1]).toString(), json.get(args[2]).toString(), json.get(args[3]).toString(), json.get(args[4]).toString(), Double.valueOf(json.get(args[5]).toString()), Double.valueOf(json.get(args[6]).toString()), json.get(args[7]).toString());
 		}
 		catch(final Exception ex) {
@@ -96,7 +100,7 @@ public class IPInfo {
 			this.city = city;
 			this.latitude = latitude;
 			this.longitude = longitude;
-			this.timezone = timezone;
+			this.timezone = timezone.replaceAll("_", " ");
 		}
 		
 		public final String getCountryName() {
@@ -129,6 +133,10 @@ public class IPInfo {
 		
 		public final String getTimezone() {
 			return timezone;
+		}
+		
+		public final IPDataWeather getWeatherData(){
+			return IPInfo.getWeatherData(city, countryCode);
 		}
 		
 	}
