@@ -84,7 +84,7 @@ public class SkIP {
 		private final double longitude;
 		private final String timezone;
 		
-		public SkIPData(final String countryName, final String countryCode, final String region, final String zip, final String city, final double latitude, final double longitude, final String timezone) {
+		public SkIPData(final String countryName, final String countryCode, final String region, final String city, final String zip, final double latitude, final double longitude, final String timezone) {
 			this.countryName = countryName;
 			this.countryCode = countryCode;
 			this.region = region;
