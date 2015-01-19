@@ -1,11 +1,14 @@
 package eagle.nest.iputils;
 
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class IPUtils extends JavaPlugin {
 
 	public void onEnable(){
-		System.out.println("IPUtils is ready!");
+		PluginManager pm = Bukkit.getPluginManager();
+		pm.registerEvents(new DataAnalysis(), this);
 	}
 	
 }
