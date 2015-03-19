@@ -37,8 +37,6 @@ public class IPInfo {
 	}
 	
 	public static final IPData getIPData(String ip) {
-		if(ip.equals("127.0.0.1"))
-			ip = "69.4.136.98";
 		try {
 			final JSONObject json = (JSONObject)new JSONParser().parse(httpGet(mode.getQueryURL(ip)));
 			final String[] args = mode.getArguments();
